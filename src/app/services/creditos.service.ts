@@ -3,11 +3,12 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { environment } from 'src/environments/environment';
 // import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs';
-import {UsuarioModel} from 'src/app/models/usuario';
+import {CreditoModel} from 'src/app/models/credito';
+
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class CreditosService {
   public urlBase = '';
   constructor(private http: HttpClient) {
 
@@ -16,20 +17,20 @@ export class UsuarioService {
 
 
 
-  obtenerUsuarios(){
-    const url = `${this.urlBase}/usuarios`;
+  obtenerCreditos(){
+    const url = `${this.urlBase}/creditos`;
     return this.http.get(url);
 
   }
-  obtenerUsuarioPorId(id:number){
-    const url = `${this.urlBase}/usuarios/${id}`;
+  obtenerCreditoPorId(id:number){
+    const url = `${this.urlBase}/creditos/${id}`;
     return this.http.get(url);
   }
 
-  crearUsuario(Usuarios:UsuarioModel){
-    const url = `${this.urlBase}/usuarios`;
+  crearCredito(creditos:CreditoModel){
+    const url = `${this.urlBase}/creditos`;
     const httpOptions = new HttpHeaders().append('Content-Type', 'application/json; charset=UTF-8');
-    return this.http.post(url, Usuarios, { headers: httpOptions });
+    return this.http.post(url, creditos, { headers: httpOptions });
   }
 
 

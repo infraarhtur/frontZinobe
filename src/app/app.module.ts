@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //#region modules
 
-
+import { CreditoModule } from './modules/credito/credito.module';
 import { UsuarioModule } from './modules/usuario/usuario.module';
 //#endregion modules
 
@@ -17,6 +17,7 @@ import { HomeComponent } from './generals/components/home/home.component';
 //#region routing
 import {AppRoutingModule } from '../app/app.routing';
 //#endregion routing
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {AppRoutingModule } from '../app/app.routing';
     HttpClientModule,
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
 
-
+    TooltipModule,
+    CreditoModule,
     UsuarioModule
   ],
   providers: [

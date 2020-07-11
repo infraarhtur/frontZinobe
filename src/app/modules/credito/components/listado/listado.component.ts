@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators, AbstractControl } from '@angular/forms';
-import { UsuarioModel } from '../../../../models/usuario';
-import { UsuarioService } from '../../../../services/usuario.service';
+import { CreditoModel } from '../../../../models/credito';
+import { CreditosService } from 'src/app/services/creditos.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
-
 
 
 @Component({
@@ -14,11 +13,10 @@ import Swal from 'sweetalert2'
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
-
-  public usuarios: UsuarioModel[] = [];
+  public creditos: CreditoModel[] = [];
   constructor(
     public formBuilder: FormBuilder,
-    private _usuarioService: UsuarioService,
+    private _Creditoservice: CreditosService,
     private router: Router
   ) {
 
@@ -27,14 +25,14 @@ export class ListadoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.obtenerUsuarios();
+    this.obtenerCreditos();
   }
 
-  obtenerUsuarios() {
-    this._usuarioService.obtenerUsuarios().subscribe(
-      (res: UsuarioModel[]) => {
+  obtenerCreditos() {
+    this._Creditoservice. obtenerCreditos().subscribe(
+      (res: CreditoModel[]) => {
 
-        this.usuarios = res;
+        this.creditos = res;
 
       }, (error: Response) => {
         Swal.fire('Oops... error en la solicitud', 'Contactese con el desarrollador!', 'error');

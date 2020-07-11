@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponent } from './components/main/main.component';
-import { CrearComponent } from './components/crear/crear.component';
-import { ListadoComponent } from './components/listado/listado.component';
 
-import {UsuarioRoutingModule } from './usuario.routing';
+//#region components
+import { MainComponent } from './components/main/main.component';
+import { ListadoComponent } from './components/listado/listado.component';
+import {CreditoRoutingModule } from './credito.routing';
+//#endregion components
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TooltipModule } from 'ng2-tooltip-directive';
+import { CrearComponent } from './components/crear/crear.component';
 
 @NgModule({
-  declarations: [MainComponent, CrearComponent, ListadoComponent],
+  declarations: [MainComponent, ListadoComponent, CrearComponent],
   imports: [
     CommonModule,
-    UsuarioRoutingModule,
     FormsModule,
-     ReactiveFormsModule,
-     TooltipModule
+    ReactiveFormsModule,
+    CreditoRoutingModule
+
   ]
 })
-export class UsuarioModule { }
+export class CreditoModule { }

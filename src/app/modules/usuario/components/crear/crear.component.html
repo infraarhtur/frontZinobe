@@ -1,1 +1,49 @@
-<p>crear works!</p>
+<p>crear Usuario</p>
+
+
+<form [formGroup]="frmCrearUsuario" (ngSubmit)="CrearUsuario()">
+
+
+
+
+  <div class="form-group">
+    <label for="formGroupNombre">Nombre</label>
+    <input type="text" class="form-control" name ="Nombre"
+    formControlName="Nombre"  id="Nombre"
+    id="formGroupNombre" placeholder="Nombre Usuario">
+
+    <div *ngIf="frmCrearUsuario.get('Nombre').errors?.required" class="text-danger" >
+      Este campo es obligatorio
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="formGroupDocumento">Documento</label>
+    <input type="text" name ="Documento" formControlName="Documento"
+     class="form-control" id="formGroupDocumento" placeholder="Documento Usuario" required >
+
+     <div *ngIf="frmCrearUsuario.get('Documento').errors?.required" class="text-danger" >
+  Este campo es obligatorio
+    </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="formGroupCorreo">Correo</label>
+      <input type="text" name ="Correo" formControlName="Correo"
+       class="form-control" id="formGroupCorreo" placeholder="Correo Usuario" required >
+
+       <div *ngIf="frmCrearUsuario.get('Correo').errors?.required" class="text-danger" >
+    Este campo es obligatorio
+      </div>
+      <!-- {{frmCrearUsuario.get('Correo').errors | json}} -->
+      <div *ngIf="frmCrearUsuario.get('Correo').errors?.email" class="text-danger" >
+        Formato de email incorrecto
+          </div>
+
+      </div>
+
+
+  <button type="submit" class="btn btn-primary"  [disabled]="!frmCrearUsuario.valid" >crear</button>
+</form>

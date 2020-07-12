@@ -1,6 +1,8 @@
 # zinobeCreditos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+Aplicación echa en angular version 10.0.0.  bootstrap y json server
+realizada por  Luis arturo monsalve 
+
 
 ## Development server
 

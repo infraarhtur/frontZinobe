@@ -4,8 +4,11 @@ import { UsuarioModel } from '../../../../models/usuario';
 import { UsuarioService } from '../../../../services/usuario.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 import Swal from 'sweetalert2'
 
+// import * as _ from 'lodash';
+// declare var $: any;
 
 
 @Component({
@@ -16,6 +19,7 @@ import Swal from 'sweetalert2'
 export class ListadoComponent implements OnInit {
 
   public usuarios: UsuarioModel[] = [];
+  public idUsuario: number;
   constructor(
     public formBuilder: FormBuilder,
     private _usuarioService: UsuarioService,
@@ -28,6 +32,8 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerUsuarios();
+
+
   }
 
   obtenerUsuarios() {
@@ -42,6 +48,14 @@ export class ListadoComponent implements OnInit {
       }
 
     );
+  }
+
+
+  abrirModal(id:number){
+  this.idUsuario = id;
+
+
+
   }
 
 }

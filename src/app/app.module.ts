@@ -19,6 +19,9 @@ import {AppRoutingModule } from '../app/app.routing';
 //#endregion routing
 import { TooltipModule } from 'ng2-tooltip-directive';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,9 @@ import { TooltipModule } from 'ng2-tooltip-directive';
 
     TooltipModule,
     CreditoModule,
-    UsuarioModule
+    UsuarioModule,
+
+
   ],
   providers: [
 

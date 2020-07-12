@@ -1,0 +1,112 @@
+{
+  "usuarios": [
+    {
+      "id": 0,
+      "nombre": "primerUsuario",
+      "documento": "1234",
+      "correo": "test@gmail.com"
+    },
+    {
+      "nombre": "segundo Usuario editado",
+      "documento": "1234",
+      "correo": "testEditado@gmail.com",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nombre": "aplication2",
+      "documento": "44541114411",
+      "correo": "infraarhtur2@gmail.com"
+    },
+    {
+      "id": 3,
+      "nombre": "aplication",
+      "documento": "10265555",
+      "correo": "pruebaMejorada@test.com"
+    },
+    {
+      "id": 4,
+      "nombre": "nuevo",
+      "documento": "8888888",
+      "correo": "sss@llddd.com"
+    },
+    {
+      "id": 5,
+      "nombre": "maury",
+      "documento": "1026547888",
+      "correo": "sss@ll.com"
+    }
+  ],
+  "creditos": [
+    {
+      "id": 1,
+      "idUsuario": 5,
+      "estadoCredito": true,
+      "montoSolicitado": "50000",
+      "usuario": {
+        "id": 5,
+        "nombre": "maury",
+        "documento": "1026547888",
+        "correo": "sss@ll.com"
+      },
+      "fechaPagar": "2020-07-14T20:11:10.000Z",
+      "pagoCredito": false
+    },
+    {
+      "id": 2,
+      "idUsuario": 1,
+      "estadoCredito": false,
+      "montoSolicitado": "50002",
+      "fechaPagar": "2020-07-28T20:11:39.000Z",
+      "pagoCredito": true
+    },
+    {
+      "id": 3,
+      "idUsuario": 1,
+      "estadoCredito": true,
+      "montoSolicitado": "50002",
+      "fechaPagar": "2020-07-28T20:11:39.000Z",
+      "pagoCredito": true
+    },
+    {
+      "id": 4,
+      "idUsuario": 1,
+      "estadoCredito": true,
+      "montoSolicitado": "50000",
+      "fechaPagar": "2020-07-21T20:27:25.000Z",
+      "pagoCredito": false
+    },
+    {
+      "id": 5,
+      "idUsuario": 1,
+      "estadoCredito": true,
+      "montoSolicitado": "50000",
+      "fechaPagar": "2020-07-21T20:27:25.000Z",
+      "pagoCredito": false
+    },
+    {
+      "id": 6,
+      "idUsuario": 1,
+      "estadoCredito": false,
+      "montoSolicitado": "12000",
+      "fechaPagar": "",
+      "pagoCredito": false
+    },
+    {
+      "id": 7,
+      "idUsuario": 1,
+      "estadoCredito": true,
+      "montoSolicitado": "12000",
+      "fechaPagar": "",
+      "pagoCredito": false
+    },
+    {
+      "id": 8,
+      "idUsuario": 1,
+      "estadoCredito": true,
+      "montoSolicitado": "44455",
+      "fechaPagar": "2020-07-06T20:31:29.000Z",
+      "pagoCredito": true
+    }
+  ]
+}

@@ -1,7 +1,6 @@
 {
-
   "urlBaseServicio":"http://localhost:3000",
-  "montoBase":9999999999,
+  "montoBase":100000,
   "montoMinimo":10000,
   "montoMaximo":100000
 

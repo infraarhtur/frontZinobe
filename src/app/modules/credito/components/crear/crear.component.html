@@ -12,7 +12,8 @@
 <form [formGroup]="frmCrearCredito" (ngSubmit)="CrearCredito()">
 
   <div class="form-group">
-    <label for="formGroupMonto">Monto</label>
+
+    <label for="formGroupMonto">Monto a solicitar <span class="text-info">Rango min {{this.rangoMinimo}} max: min {{this.rangoMaximo}}</span> </label>
     <input type="text" class="form-control" name ="Monto"
     formControlName="montoSolicitado"  id="Monto"
     id="formGroupMonto" placeholder="Monto Credito"  SoloNumeros="true">
@@ -21,7 +22,14 @@
       Este campo es obligatorio
     </div>
 
+    <div *ngIf="frmCrearCredito.get('montoSolicitado').errors?.min" class="text-danger" >
+      no cumple con el rango minimo
+    </div>
+    <div *ngIf="frmCrearCredito.get('montoSolicitado').errors?.max" class="text-danger" >
+     excedio el rango maximo
+    </div>
   </div>
+  <div> ${{this.frmCrearCredito.value.montoSolicitado | number}}</div>
 
   <div class="form-group">
     <label for="formGroupfechaPagar">fecha Pagar</label>

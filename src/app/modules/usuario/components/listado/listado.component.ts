@@ -56,8 +56,11 @@ export class ListadoComponent implements OnInit {
 
   }
   solicitarCredito(idUser){
-    idUser = 1;
+    ;
     this.router.navigate([`Credito/crearSolicitud/${idUser}`]);
   }
 
+  redireciconarCrear(){
+    this.router.navigate([`Usuario/crear`]);
+  }
 }

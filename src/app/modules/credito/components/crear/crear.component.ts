@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 import { UsuarioService } from '../../../../services/usuario.service';
 import { UsuarioModel } from '../../../../models/usuario';
 import { selectInicial } from 'src/app/directives/validators/select.validators';
-
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -26,6 +26,8 @@ export class CrearComponent implements OnInit {
   public esPagoCredito: boolean;
   public idUsuario: number;
   public  idUsuarioPorUrl: number;
+  public rangoMinimo:number;
+  public rangoMaximo:number;
 public creditosUsuario:CreditoModel[] = [];
 
   constructor(
@@ -36,6 +38,9 @@ public creditosUsuario:CreditoModel[] = [];
     private activatedRoute: ActivatedRoute,
 
   ) {
+
+this.rangoMinimo = environment.montoMinimo;
+this.rangoMaximo= environment.montoMaximo;
     this.esPagoCredito = false;
     this.idUsuario = undefined;
 
@@ -56,7 +61,7 @@ if(this.activatedRoute.snapshot.paramMap.get('idUsuario') !== null){
   validacionesFormulario() {
 
     this.frmCrearCredito = this.formBuilder.group({
-      montoSolicitado: this.formBuilder.control('', [Validators.required]),
+      montoSolicitado: this.formBuilder.control('', [Validators.required,Validators.min(this.rangoMinimo) , Validators.max(this.rangoMaximo)]),
       fechaPagar: this.formBuilder.control(''),
       pagoCredito: this.formBuilder.control(''),
       usuario: this.formBuilder.control(undefined, [Validators.required])
@@ -74,9 +79,19 @@ if(this.activatedRoute.snapshot.paramMap.get('idUsuario') !== null){
 
 
     this.credito.estadoCredito = Boolean(Math.round(Math.random()));
+
+let totalMontoAprobados = Number(localStorage.getItem('totalMontoAprobados')) ;
+if(totalMontoAprobados >= Number(environment.montoBase) ){
+
+  Swal.fire('Monto base al limite', 'No se pueden crear más créditos por que el monto total de créditos aprobados es mayor o igual a monto base', 'warning');
+  return
+}
+
+
     this._creditoService.crearCredito(this.credito).subscribe((res: CreditoModel) => {
       if (res.estadoCredito) {
         Swal.fire('Crédito registrado y aprobado con éxito', 'Crédito aprobado con éxito', 'success');
+        this.validacionMontosAprobados();
       } else {
         Swal.fire('Crédito registrado Pero fue rechazado', 'Crédito rechazado!', 'info');
       }
@@ -124,5 +139,15 @@ if(this.activatedRoute.snapshot.paramMap.get('idUsuario') !== null){
     })
 
   }
+  validacionMontosAprobados(){
+    let montoGuardar =0;
+    this._creditoService.obtenercreditosPorEstado(true).subscribe((res:CreditoModel[])=>{
+      res.forEach((item:CreditoModel)=> {
+        montoGuardar += Number(item.montoSolicitado) ;
 
+      });
+
+      localStorage.setItem('totalMontoAprobados', montoGuardar.toString() )
+    });
+      }
 }

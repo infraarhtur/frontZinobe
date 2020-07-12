@@ -1,5 +1,8 @@
 <h5 >listado usuarios</h5>
 
+<button type="button" class="btn btn-info"  tooltip="Crear usuario" placement="right" (click)="redireciconarCrear()" > <i class="fa fa-user-plus" aria-hidden="true"></i> Crear Usuario</button>
+
+
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -14,9 +17,9 @@
     <tr *ngFor= "let item of usuarios ;let indice=index" >
       <th scope="row">{{indice}}</th>
       <td>
-        <button type="button" class="btn btn-outline-primary mr-1"   tooltip="Editar Usuario" placement="left"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button>&nbsp;
+
         <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#CreditoPorUsuarioModal"  tooltip="Ver Creditos" placement="top" (click)="abrirModal(item.id)"> <i class="fa fa-eye" aria-hidden="true"></i> </button>&nbsp;
-        <button type="button" class="btn btn-info"  tooltip="Solicitar Credito" placement="right" (click)="solicitarCredito()" > <i class="fa fa-credit-card" aria-hidden="true"></i> Solicitar</button>
+        <button type="button" class="btn btn-info"  tooltip="Solicitar Credito" placement="right" (click)="solicitarCredito(item.id)" > <i class="fa fa-credit-card" aria-hidden="true"></i> Solicitar</button>
 
       </td>
       <td>{{item.nombre}}</td>

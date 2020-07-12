@@ -23,8 +23,10 @@ const CreditoRoutes: Routes = [{
   children: [
     { path: '', redirectTo: 'listado', pathMatch: 'full' },
     { path: 'listado', component: ListadoComponent},
-    { path: 'crear', component: CrearComponent}
-
+    { path: 'crear', component: CrearComponent},
+    { path: 'crearSolicitud/:idUsuario', component: CrearComponent},
+    { path: 'listadoCreditosRechazados/:estadoCreditos', component: ListadoComponent},
+    { path: 'listadoCreditosAprovados/:estadoCreditos', component: ListadoComponent}
   ]
 }];
 

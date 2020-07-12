@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, NgForm, Validators, AbstractControl } from '@an
 import { CreditoModel } from '../../../../models/credito';
 import { CreditosService } from '../../../../services/creditos.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2'
 import { UsuarioService } from '../../../../services/usuario.service';
 import { UsuarioModel } from '../../../../models/usuario';
@@ -25,17 +25,26 @@ export class CrearComponent implements OnInit {
   public valorLeatorio: any;
   public esPagoCredito: boolean;
   public idUsuario: number;
+  public  idUsuarioPorUrl: number;
 public creditosUsuario:CreditoModel[] = [];
 
   constructor(
     public formBuilder: FormBuilder,
     private _creditoService: CreditosService,
     private _usuarioService: UsuarioService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
 
   ) {
     this.esPagoCredito = false;
     this.idUsuario = undefined;
+
+if(this.activatedRoute.snapshot.paramMap.get('idUsuario') !== null){
+  this.idUsuario  = Number(this.activatedRoute.snapshot.paramMap.get('idUsuario'));
+}
+
+    // this.idUsuarioPorUrl=Number(this.activatedRoute.snapshot.paramMap.get('idUsuario'))
+
   }
 
   ngOnInit(): void {

@@ -16,7 +16,7 @@
       <td>
         <button type="button" class="btn btn-outline-primary mr-1"   tooltip="Editar Usuario" placement="left"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button>&nbsp;
         <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#CreditoPorUsuarioModal"  tooltip="Ver Creditos" placement="top" (click)="abrirModal(item.id)"> <i class="fa fa-eye" aria-hidden="true"></i> </button>&nbsp;
-        <button type="button" class="btn btn-info"  tooltip="Solicitar Credito" placement="right" > <i class="fa fa-credit-card" aria-hidden="true"></i> Solicitar</button>
+        <button type="button" class="btn btn-info"  tooltip="Solicitar Credito" placement="right" (click)="solicitarCredito()" > <i class="fa fa-credit-card" aria-hidden="true"></i> Solicitar</button>
 
       </td>
       <td>{{item.nombre}}</td>

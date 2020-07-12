@@ -1,11 +1,20 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { cargarJSON } from '../app/function/utilidades';
 
-export const environment = {
+const environmentConfig = cargarJSON('assets/environment-config.json');
+
+const environment = {
   production: false,
-  urlBaseServicio:"http://localhost:3000"
+  urlBaseServicio:"http://localhost:3000",
+  montoBase:5000000000,
+  montoMinimo:10000,
+  montoMaximo:100000
 };
+
+// Asignación masiva de las propiedades del objeto environmentConfig a las propiedades del objeto environment
+// Actualiza environment antes de exportar
+Object.assign(environment, environmentConfig);
+export { environment };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -38,5 +38,11 @@ export class CreditosService {
     return this.http.get(url);
   }
 
+  obtenercreditosPorEstado(estado:boolean){
+    debugger;
+    const url = `${this.urlBase}/creditos?estadoCredito=${estado}`;
+    return this.http.get(url);
+  }
+
 
 }

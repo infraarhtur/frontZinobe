@@ -54,8 +54,10 @@ export class ListadoComponent implements OnInit {
   abrirModal(id:number){
   this.idUsuario = id;
 
-
-
+  }
+  solicitarCredito(idUser){
+    idUser = 1;
+    this.router.navigate([`Credito/crearSolicitud/${idUser}`]);
   }
 
 }

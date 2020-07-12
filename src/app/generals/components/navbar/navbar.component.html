@@ -20,8 +20,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['Credito/crear']"> <i class="fa fa-address-book-o" aria-hidden="true"></i> inicio</a>
-          <a class="dropdown-item" [routerLink]="['']"> <i class="fa fa-address-book-o" aria-hidden="true"></i> Aprovados</a>
-          <a class="dropdown-item"[routerLink]="['']"> <i class="fa fa-id-card-o" aria-hidden="true"></i>Rechazados</a>
+          <a class="dropdown-item" [routerLink]="['Credito/listadoCreditosAprovados',true]"> <i class="fa fa-address-book-o" aria-hidden="true"></i> Aprovados</a>
+          <a class="dropdown-item"[routerLink]="['Credito/listadoCreditosRechazados', false]"> <i class="fa fa-id-card-o" aria-hidden="true"></i>Rechazados</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="https://www.linkedin.com/in/luis-arturo-monsalve-779b66176"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Mas sobre mi</a>
         </div>

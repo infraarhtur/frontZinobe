@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th scope="col" style="width: 100px;">#</th>
-      <th scope="col" style="width: 300px;">Acciones</th>
+
       <th scope="col">Estado</th>
       <th scope="col">Monto</th>
       <th scope="col">Fecha Pagar</th>
@@ -17,12 +17,7 @@
   <tbody>
     <tr *ngFor= "let item of creditos ;let indice=index" >
       <th scope="row">{{indice}}</th>
-      <td>
-        <!-- <button type="button" class="btn btn-outline-primary mr-1"   tooltip="Editar Usuario" placement="left"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button>&nbsp;
-        <button type="button" class="btn btn-outline-info"  tooltip="Ver Creditos" placement="top"> <i class="fa fa-eye" aria-hidden="true"></i> </button>&nbsp;
-        <button type="button" class="btn btn-info"  tooltip="Solicitar Credito" placement="right" > <i class="fa fa-credit-card" aria-hidden="true"></i> Solicitar</button> -->
 
-      </td>
       <td>
         <label class="text-info" *ngIf="item.estadoCredito"> Crédito Aprobado</label>
         <label class="text-danger" *ngIf="!item.estadoCredito"> Crédito Rechazado</label>

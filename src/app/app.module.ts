@@ -18,6 +18,7 @@ import { HomeComponent } from './generals/components/home/home.component';
 import {AppRoutingModule } from '../app/app.routing';
 //#endregion routing
 import { TooltipModule } from 'ng2-tooltip-directive';
+import { MontoBaseComponent } from './generals/components/monto-base/monto-base.component';
 
 
 
@@ -26,7 +27,8 @@ import { TooltipModule } from 'ng2-tooltip-directive';
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    MontoBaseComponent
   ],
   imports: [
     BrowserModule,

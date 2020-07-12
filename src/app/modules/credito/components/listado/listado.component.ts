@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, NgForm, Validators, AbstractControl } from '@an
 import { CreditoModel } from '../../../../models/credito';
 import { CreditosService } from 'src/app/services/creditos.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+
 import Swal from 'sweetalert2'
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,22 +15,32 @@ import Swal from 'sweetalert2'
 })
 export class ListadoComponent implements OnInit {
   public creditos: CreditoModel[] = [];
+  public estadoCreditosUrl: boolean;
   constructor(
     public formBuilder: FormBuilder,
     private _Creditoservice: CreditosService,
+    private activatedRoute: ActivatedRoute,
     private router: Router
   ) {
-
 
 
   }
 
   ngOnInit(): void {
-    this.obtenerCreditos();
+
+   console.log('parametro por url', this.activatedRoute.snapshot.paramMap.get('estadoCreditos'))
+    if (this.activatedRoute.snapshot.paramMap.get('estadoCreditos') !== null && this.activatedRoute.snapshot.paramMap.get('estadoCreditos') !== undefined) {
+      this.obtenercreditosPorEstado(this.activatedRoute.snapshot.paramMap.get('estadoCreditos'))
+    } else {
+      this.obtenerCreditos();
+    }
+
+
   }
 
   obtenerCreditos() {
-    this._Creditoservice. obtenerCreditos().subscribe(
+
+    this._Creditoservice.obtenerCreditos().subscribe(
       (res: CreditoModel[]) => {
 
         this.creditos = res;
@@ -41,5 +52,21 @@ export class ListadoComponent implements OnInit {
 
     );
   }
+  obtenercreditosPorEstado(estado) {
+    debugger;
+    this._Creditoservice.obtenercreditosPorEstado(estado).subscribe(
+      (res: CreditoModel[]) => {
+
+        this.creditos = res;
+
+      }, (error: Response) => {
+        Swal.fire('Oops... error en la solicitud', 'Contactese con el desarrollador!', 'error');
+        console.log('error controlado ', error);
+      }
+
+    );
+  }
+
+
 
 }

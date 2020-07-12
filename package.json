@@ -25,6 +25,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "ng2-tooltip-directive": "^2.9.20",
+    "ngx-bootstrap": "^5.6.1",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "rxjs": "^6.5.5",

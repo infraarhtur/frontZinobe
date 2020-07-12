@@ -33,6 +33,10 @@ export class CreditosService {
     return this.http.post(url, creditos, { headers: httpOptions });
   }
 
+  obtenerCreditoPorIdUsuario(idUsuario:number){
+    const url = `${this.urlBase}/creditos?idUsuario=${idUsuario}`;
+    return this.http.get(url);
+  }
 
 
 }

@@ -1,1 +1,79 @@
-<p>crear works!</p>
+<p>crear credito!  {{this.valorLeatorio}}</p>
+
+<!-- <div class="row">
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <input type="text"
+           placeholder="Datepicker"
+           class="form-control"
+           bsDatepicker>
+  </div> -->
+
+
+<form [formGroup]="frmCrearCredito" (ngSubmit)="CrearCredito()">
+
+  <div class="form-group">
+    <label for="formGroupMonto">Monto</label>
+    <input type="text" class="form-control" name ="Monto"
+    formControlName="montoSolicitado"  id="Monto"
+    id="formGroupMonto" placeholder="Monto Credito"  SoloNumeros="true">
+
+    <div *ngIf="frmCrearCredito.get('montoSolicitado').errors?.required" class="text-danger" >
+      Este campo es obligatorio
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupfechaPagar">fecha Pagar</label>
+    <input type="text" class="form-control" name ="fechaPagar"
+    formControlName="fechaPagar"  id="fechaPagar"
+    id="formGroupfechaPagar" placeholder="fecha Pagar Credito" bsDatepicker>
+
+    <div *ngIf="frmCrearCredito.get('fechaPagar').errors?.required" class="text-danger" >
+      Este campo es obligatorio
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label for="formGrouppagoCredito">Pago Credito</label>
+
+    <div class="custom-control custom-switch">
+      <input [(ngModel)]="this.esPagoCredito" type="checkbox" class="custom-control-input" id="swPagocredito"    formControlName="pagoCredito" checked>
+      <label class="custom-control-label" for="swPagocredito" *ngIf="esPagoCredito">si</label>
+      <label class="custom-control-label" for="swPagocredito" *ngIf="!esPagoCredito">no</label>
+    </div>
+    <!-- <input type="text" class="form-control" name ="pagoCredito"
+    formControlName="pagoCredito"  id="pagoCredito"
+    id="formGrouppagoCredito" placeholder="pago Credito"> -->
+
+
+
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupusuario">Usuario  asociado al credito</label>
+
+
+    <select  class="form-control" name="usuario" formControlName="usuario" placeholder="usuario"  [(ngModel)]="this.idUsuario" (change)="obtenerUsarioPorId()" >
+      <option [ngValue]=undefined selected >seleccione</option>
+      <option [ngValue]="item.id" *ngFor="let item of usuarios"> {{item.nombre +' doc:'+ item.documento }}</option>
+      </select>
+
+
+
+
+    <div *ngIf="frmCrearCredito.get('usuario').errors?.required" class="text-danger" >
+      Este campo es obligatorio
+    </div>
+
+  </div>
+
+
+
+
+
+  <button type="submit" class="btn btn-primary"  [disabled]="!frmCrearCredito.valid" >crear</button>
+</form>
+
+

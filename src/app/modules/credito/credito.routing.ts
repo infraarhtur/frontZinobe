@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 //#region components
 import { MainComponent } from './components/main/main.component';
 import { ListadoComponent } from './components/listado/listado.component';
+import { CrearComponent } from './components/crear/crear.component';
 // import { EditarComponent } from './components/editar/editar.component';
 
 //#endregion components
@@ -22,6 +23,7 @@ const CreditoRoutes: Routes = [{
   children: [
     { path: '', redirectTo: 'listado', pathMatch: 'full' },
     { path: 'listado', component: ListadoComponent},
+    { path: 'crear', component: CrearComponent}
 
   ]
 }];

@@ -50,7 +50,7 @@ export class ListadoComponent implements OnInit {
     );
   }
   obtenercreditosPorEstado(estado) {
-    debugger;
+
     this._Creditoservice.obtenercreditosPorEstado(estado).subscribe(
       (res: CreditoModel[]) => {
         this.creditos = res;

@@ -41,6 +41,12 @@
       "nombre": "jorge",
       "documento": "455114444",
       "correo": "pruebaMejorada@test.com.co"
+    },
+    {
+      "id": 8,
+      "nombre": "juanita",
+      "documento": "84554455",
+      "correo": "pruebadejuanita@test.com"
     }
   ],
   "creditos": [

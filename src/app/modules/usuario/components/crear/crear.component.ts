@@ -51,7 +51,7 @@ export class CrearComponent implements OnInit {
  this._usuarioService.crearUsuario(this.usuario).subscribe(
   (res:UsuarioModel) =>{
     Swal.fire('Usuario registrado con éxito', 'Buen trabajo!', 'success');
-
+    this.router.navigate([`Usuario/listado`]);
   }
 );
   }

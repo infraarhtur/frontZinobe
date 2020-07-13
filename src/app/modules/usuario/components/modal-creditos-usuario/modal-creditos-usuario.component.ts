@@ -22,7 +22,7 @@ export class ModalCreditosUsuarioComponent implements OnInit , OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-debugger;
+
 
 this.obtenerCreditoPorIdUsuario(changes.usuarioId.currentValue);
 

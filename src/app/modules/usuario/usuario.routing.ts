@@ -11,15 +11,8 @@ import { CrearComponent } from './components/crear/crear.component';
 
 
 const UsuarioRoutes: Routes = [{
-  path: 'Usuario', component: MainComponent,
-  // canActivate: [
-  //   LoginGuard,
-  //   AuthGuard
-  // ],
-  // canActivateChild: [
-  //   LoginGuard,
-  //   AuthGuard
-  // ],
+  path: '', component: MainComponent,
+
   children: [
     { path: '', redirectTo: 'listado', pathMatch: 'full' },
     { path: 'listado', component: ListadoComponent},

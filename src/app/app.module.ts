@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //#region modules
 
 import { CreditoModule } from './modules/credito/credito.module';
-import { UsuarioModule } from './modules/usuario/usuario.module';
+
 //#endregion modules
 
 import { AppComponent } from './app.component';
@@ -37,10 +37,10 @@ import { GeneralService } from 'src/app/interceptors/generalService.service';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
-
-    TooltipModule,
     CreditoModule,
-    UsuarioModule,
+    TooltipModule,
+
+
 
 
   ],

@@ -115,7 +115,7 @@ if(totalMontoAprobados >= Number(environment.montoBase) ){
   }
 
   obtenerUsarioPorId() {
-    debugger;
+
     if (this.idUsuario === null || !Number(this.idUsuario)) {
       this.idUsuario = undefined;
       return;

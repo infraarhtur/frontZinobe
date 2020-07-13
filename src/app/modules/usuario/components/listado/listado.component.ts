@@ -4,7 +4,7 @@ import { UsuarioModel } from '../../../../models/usuario';
 import { UsuarioService } from '../../../../services/usuario.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import * as $ from 'jquery';
+
 import Swal from 'sweetalert2'
 
 // import * as _ from 'lodash';
@@ -42,10 +42,8 @@ export class ListadoComponent implements OnInit {
 
         this.usuarios = res;
 
-      }, (error: Response) => {
-        Swal.fire('Oops... error en la solicitud', 'Contactese con el desarrollador!', 'error');
-        console.log('error controlado ', error);
       }
+
 
     );
   }

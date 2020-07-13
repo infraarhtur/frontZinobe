@@ -97,11 +97,6 @@ if(totalMontoAprobados >= Number(environment.montoBase) ){
       } else {
         Swal.fire('Crédito registrado Pero fue rechazado', 'Crédito rechazado!', 'info');
       }
-
-
-    }, (error: Response) => {
-      Swal.fire('Oops... error en la solicitud', 'Contactese con el desarrollador!', 'error');
-      console.log('error controlado ', error);
     })
   }
 

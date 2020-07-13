@@ -28,8 +28,7 @@ export class UsuarioService {
 
   crearUsuario(Usuarios:UsuarioModel){
     const url = `${this.urlBase}/usuarios`;
-    const httpOptions = new HttpHeaders().append('Content-Type', 'application/json; charset=UTF-8');
-    return this.http.post(url, Usuarios, { headers: httpOptions });
+    return this.http.post(url, Usuarios);
   }
 
 

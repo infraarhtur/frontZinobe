@@ -45,9 +45,6 @@ export class ListadoComponent implements OnInit {
 
         this.creditos = res;
 
-      }, (error: Response) => {
-        Swal.fire('Oops... error en la solicitud', 'Contactese con el desarrollador!', 'error');
-        console.log('error controlado ', error);
       }
 
     );
@@ -56,12 +53,7 @@ export class ListadoComponent implements OnInit {
     debugger;
     this._Creditoservice.obtenercreditosPorEstado(estado).subscribe(
       (res: CreditoModel[]) => {
-
         this.creditos = res;
-
-      }, (error: Response) => {
-        Swal.fire('Oops... error en la solicitud', 'Contactese con el desarrollador!', 'error');
-        console.log('error controlado ', error);
       }
 
     );

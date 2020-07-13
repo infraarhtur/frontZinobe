@@ -29,8 +29,8 @@ export class CreditosService {
 
   crearCredito(creditos:CreditoModel){
     const url = `${this.urlBase}/creditos`;
-    const httpOptions = new HttpHeaders().append('Content-Type', 'application/json; charset=UTF-8');
-    return this.http.post(url, creditos, { headers: httpOptions });
+    // const httpOptions = new HttpHeaders().append('Content-Type', 'application/json; charset=UTF-8');{ headers: httpOptions }
+    return this.http.post(url, creditos);
   }
 
   obtenerCreditoPorIdUsuario(idUsuario:number){

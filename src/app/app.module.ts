@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //#region modules
@@ -19,6 +19,7 @@ import {AppRoutingModule } from '../app/app.routing';
 //#endregion routing
 import { TooltipModule } from 'ng2-tooltip-directive';
 import { MontoBaseComponent } from './generals/components/monto-base/monto-base.component';
+import { GeneralService } from 'src/app/interceptors/generalService.service';
 
 
 
@@ -43,7 +44,11 @@ import { MontoBaseComponent } from './generals/components/monto-base/monto-base.
 
 
   ],
-  providers: [
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:GeneralService,
+    multi:true
+  }
 
   ],
   bootstrap: [AppComponent]

@@ -30,9 +30,6 @@ this.obtenerCreditoPorIdUsuario(changes.usuarioId.currentValue);
   obtenerCreditoPorIdUsuario(idUduario:number){
 this._Creditoservice.obtenerCreditoPorIdUsuario(idUduario).subscribe((res:CreditoModel[])=>{
  this. creditos= res;
-}, (error: Response) => {
-  Swal.fire('Oops... error en la solicitud', 'Contactese con el desarrollador!', 'error');
-  console.log('error controlado ', error);
 })
   }
 

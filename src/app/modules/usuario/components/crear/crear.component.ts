@@ -52,9 +52,6 @@ export class CrearComponent implements OnInit {
   (res:UsuarioModel) =>{
     Swal.fire('Usuario registrado con éxito', 'Buen trabajo!', 'success');
 
-  },(error:Response)=> {
-    Swal.fire('Oops... error en la solicitud', 'Contactese con el desarrollador!', 'error');
-    console.log('error controlado ',error);
   }
 );
   }

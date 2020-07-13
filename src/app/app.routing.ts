@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
   import {UsuarioModule} from 'src/app/modules/usuario/usuario.module';
 import { CreditoModule } from './modules/credito/credito.module';
 //#region Componentes
@@ -17,10 +17,10 @@ const routes: Routes = [
     loadChildren: 'src/app/modules/usuario/usuario.module#UsuarioModule'
   },
 
-  // {
-  //   path: 'Credito',
-  //   loadChildren: 'src/app/modules/credito/credito.module#CreditoModule'
-  // },
+  {
+    path: 'Credito',
+    loadChildren: 'src/app/modules/credito/credito.module#CreditoModule'
+  },
   {
     path: '',
     redirectTo: '/home',
@@ -29,7 +29,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    enableTracing:false,
+    preloadingStrategy:PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

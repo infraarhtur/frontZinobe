@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //#region components
 import { MainComponent } from './components/main/main.component';
@@ -20,12 +20,9 @@ import { DirectivesModule } from 'src/app/modules/directivas/directivas.module';
     FormsModule,
     ReactiveFormsModule,
     CreditoRoutingModule,
-    BrowserAnimationsModule,
+
     BsDatepickerModule.forRoot(),
     DirectivesModule
-  ],
-  exports:[
-
   ]
 })
 export class CreditoModule { }

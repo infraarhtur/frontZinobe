@@ -37,7 +37,7 @@ import { GeneralService } from 'src/app/interceptors/generalService.service';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
-    CreditoModule,
+
     TooltipModule,
 
 

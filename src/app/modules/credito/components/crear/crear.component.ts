@@ -46,6 +46,8 @@ this.rangoMaximo= environment.montoMaximo;
 
 if(this.activatedRoute.snapshot.paramMap.get('idUsuario') !== null){
   this.idUsuario  = Number(this.activatedRoute.snapshot.paramMap.get('idUsuario'));
+  debugger
+ this.obtenerUsarioPorId();
 }
 
     // this.idUsuarioPorUrl=Number(this.activatedRoute.snapshot.paramMap.get('idUsuario'))

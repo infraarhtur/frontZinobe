@@ -1,7 +1,7 @@
 {
   "usuarios": [
     {
-      "id": 0,
+      "id": 6,
       "nombre": "primerUsuario",
       "documento": "1234",
       "correo": "test@gmail.com"
@@ -54,58 +54,86 @@
     },
     {
       "id": 2,
-      "idUsuario": 1,
-      "estadoCredito": false,
-      "montoSolicitado": "50002",
-      "fechaPagar": "2020-07-28T20:11:39.000Z",
+      "idUsuario": 5,
+      "estadoCredito": true,
+      "montoSolicitado": "60000",
+      "usuario": {
+        "id": 5,
+        "nombre": "maury",
+        "documento": "1026547888",
+        "correo": "sss@ll.com"
+      },
+      "fechaPagar": "2020-07-29T00:04:59.000Z",
       "pagoCredito": true
     },
     {
       "id": 3,
       "idUsuario": 1,
       "estadoCredito": true,
-      "montoSolicitado": "50002",
-      "fechaPagar": "2020-07-28T20:11:39.000Z",
-      "pagoCredito": true
+      "montoSolicitado": "60000",
+      "usuario": {
+        "nombre": "segundo Usuario editado",
+        "documento": "1234",
+        "correo": "testEditado@gmail.com",
+        "id": 1
+      },
+      "fechaPagar": "",
+      "pagoCredito": false
     },
     {
       "id": 4,
-      "idUsuario": 1,
-      "estadoCredito": true,
-      "montoSolicitado": "50000",
-      "fechaPagar": "2020-07-21T20:27:25.000Z",
+      "idUsuario": 6,
+      "estadoCredito": false,
+      "montoSolicitado": "60000",
+      "usuario": {
+        "id": 6,
+        "nombre": "primerUsuario",
+        "documento": "1234",
+        "correo": "test@gmail.com"
+      },
+      "fechaPagar": "",
       "pagoCredito": false
     },
     {
       "id": 5,
       "idUsuario": 1,
       "estadoCredito": true,
-      "montoSolicitado": "50000",
-      "fechaPagar": "2020-07-21T20:27:25.000Z",
-      "pagoCredito": false
+      "montoSolicitado": "88885",
+      "usuario": {
+        "nombre": "segundo Usuario editado",
+        "documento": "1234",
+        "correo": "testEditado@gmail.com",
+        "id": 1
+      },
+      "fechaPagar": "2020-07-17T00:10:12.000Z",
+      "pagoCredito": true
     },
     {
       "id": 6,
       "idUsuario": 1,
-      "estadoCredito": false,
-      "montoSolicitado": "12000",
-      "fechaPagar": "",
-      "pagoCredito": false
+      "estadoCredito": true,
+      "montoSolicitado": "88885",
+      "usuario": {
+        "nombre": "segundo Usuario editado",
+        "documento": "1234",
+        "correo": "testEditado@gmail.com",
+        "id": 1
+      },
+      "fechaPagar": "2020-07-28T00:10:12.000Z",
+      "pagoCredito": true
     },
     {
       "id": 7,
       "idUsuario": 1,
-      "estadoCredito": true,
-      "montoSolicitado": "12000",
-      "fechaPagar": "",
-      "pagoCredito": false
-    },
-    {
-      "id": 8,
-      "idUsuario": 1,
-      "estadoCredito": true,
-      "montoSolicitado": "44455",
-      "fechaPagar": "2020-07-06T20:31:29.000Z",
+      "estadoCredito": false,
+      "montoSolicitado": "88885",
+      "usuario": {
+        "nombre": "segundo Usuario editado",
+        "documento": "1234",
+        "correo": "testEditado@gmail.com",
+        "id": 1
+      },
+      "fechaPagar": "2020-07-28T00:10:12.000Z",
       "pagoCredito": true
     }
   ]
